@@ -53,9 +53,10 @@ $(function(){
             var htmlStr = '';
             octopus.getNotes().forEach(function(note){
                 htmlStr += '<li class="note">'+
-                        note.content + '<p class="note-date">' +
-                        note.date +
-                    '</p></li>';
+                        '<span class="note-date">' + 
+                        new Date(note.date).toString() + '</span>' +
+                        note.content + 
+                    '</li>';
             });
             this.noteList.html( htmlStr );
         }
